@@ -48,7 +48,7 @@ def exception_handler(dispatcher, accepted_mimetypes, exc):
         adapter_klass = dispatcher.get_adapter_for_type(accepted_mimetypes)
         response, content_type, status_code = adapter_klass.format_exception(exc)
         return Response(response=response, content_type=content_type, status=status_code)
-    raise exc
+    raise
 
 
 def get_request_query_body_args(request_obj):
